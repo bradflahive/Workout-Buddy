@@ -4,6 +4,13 @@
 class Controller extends AppController {
 	protected function init() {
 		
+		$user_id = UserLogin::getUserID();
+
+		if (!$user_id){
+			header('Location: /');
+            exit();
+		}
+		
 		// Retrieve Activities
 		$getActivities = "
         			SELECT *

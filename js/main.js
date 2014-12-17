@@ -81,30 +81,34 @@
 	//toggle BUDDY invite/invited
 	$('.buddies').on('click', '.invite', function(e){
 		e.preventDefault();
-		$(this).html('Invited').toggleClass('invited');
+		var invited = $(this).html() == 'Invited' ? 'Invite' : 'Invited';
+		$(this).html(invited).toggleClass('invited');
 	});
 
 	//bail button action
 	$('.event-info').on('click', 'div.bail', function(e){
 		e.preventDefault();
-		// $(this).html('Are you sure?');
-		var	parent = $(this).parents('.event-info');
-		var bail_data = {
-			location: parent.find('.loc-id').val(),
-			activity: parent.find('.activ-id').val(),
-			day: parent.find('.day-id').val(),
-			time: parent.find('.time-id').val()
-		};
-		console.log(bail_data);
+		var check = $(this).html();
+		if(check == 'bail') {
+			$(this).html('Are you sure?');
+		} else {
+			var	parent = $(this).parents('.event-info');
+			var bail_data = {
+				location: parent.find('.loc-id').val(),
+				activity: parent.find('.activ-id').val(),
+				day: parent.find('.day-id').val(),
+				time: parent.find('.time-id').val()
+			};
 
-		$.ajax({
- 			url: "/delete_schedule",
-			type: "POST",
-			data: bail_data,
-			success: function(){
-				parent.remove();
-			}
-		});
+			$.ajax({
+	 			url: "/delete_schedule",
+				type: "POST",
+				data: bail_data,
+				success: function(){
+					parent.remove();
+				}
+			});
+		}
 
 	});
 

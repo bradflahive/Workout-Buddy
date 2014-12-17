@@ -4,6 +4,12 @@
 class Controller extends AppController {
 	protected function init() {
 		
+		$user_id = UserLogin::getUserID();
+
+		if (!$user_id){
+			header('Location: /');
+            exit();
+		}
 
 	}
 }
@@ -17,7 +23,7 @@ extract($controller->view->vars);
 <div class="primary-content">
 	<div class="about">
 		<p>Welcome to Workout Buddy!<br></p>
-		<p>Workout Buddy is designed to bring people together based on the user specified workout criteria:
+		<p>Workout Buddy is designed to bring people together based on their user specified workout criteria:
 		<ul>
 			<li>The Day you would like to workout</li>
 			<li>The Time you would like to workout</li>

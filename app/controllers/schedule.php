@@ -4,6 +4,13 @@
 class Controller extends AppController {
 	protected function init() {
 
+		$user_id = UserLogin::getUserID();
+
+		if (!$user_id){
+			header('Location: /');
+            exit();
+		}
+
 		$user = new User(UserLogin::getUserID());
 		$_POST['user_id'] = $user->user_id;
 

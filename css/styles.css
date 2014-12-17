@@ -302,6 +302,10 @@ div.empty p {
 	margin-left: 64px;
 }
 
+.invite, .invited {
+	cursor: pointer;
+}
+
 .buddy.unfriend .circle {
 	height: 20px;
 	width: 20px;
@@ -391,6 +395,7 @@ div.bail {
 	text-align: center;
 	padding: 0px 5px 21px 5px;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 /*LOGIN*/
@@ -408,7 +413,7 @@ div.bail {
 	background-color: rgb(76, 82, 100);
 	padding: 1px;
 	float: none;
-	border: 2px solid black;
+	border: 2px solid transparent;
 	border-radius: 5px;
 	margin: 20px auto;
 	font-weight: 300;
@@ -426,7 +431,7 @@ div.bail {
 	color: rgb(76, 82, 100);
 	border: transparent;
 	padding: 5px 43px;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid rgb(76, 82, 100);
 	font-size: 10pt;
 }
 
@@ -456,13 +461,14 @@ div.bail {
 /*ABOUT*/
 
 .about {
-	margin: 0;
+	margin-right: 120px;
 	margin-left: 120px;
 	font-weight: 300;
 }
 
 .about:first-child p {
 	font-size: 16pt;
+	margin-bottom: 0;
 }
 
 
