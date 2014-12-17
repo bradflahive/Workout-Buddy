@@ -27,13 +27,12 @@
 	});
 
 	// Do something after validation is successful, but before the form submits.
-	form.on('beforeSubmit', function() {
-		// $('.buddies').append();        clear buddies?
-	});
+	// form.on('beforeSubmit', function() {
+	// 	// $('.buddies').append();        clear buddies?
+	// });
 
 	// Do something when the AJAX request has returned in success
 	form.on('xhrSuccess', function(e, data) {
-		// $('body').append('<p>Received Data: ' + JSON.stringify(data) + '</p>');
 		$('.buddies').html('');
 
 		$(data.matches).each(function(idx) {
@@ -51,12 +50,6 @@
 			location.href=data.redirect;
 		}
 	});
-
-	// Do something when the AJAX request has returned with an error
-	// form.on('xhrError', function(e, xhr, settings, thrownError) {
-	// 	$('body').append('<p>Submittion Error</p>');
-	// });
-
 
 	// hides the e-mail input on load
 	$('.login-form .email').attr('hidden', '');
@@ -83,6 +76,20 @@
 		e.preventDefault();
 		var invited = $(this).html() == 'Invited' ? 'Invite' : 'Invited';
 		$(this).html(invited).toggleClass('invited');
+		var	above = $(this).parents('.buddy');
+		var invite_data = {
+			photo: above.find('img').val(),
+			name: above.find('h4').text()
+		};
+		$.ajax({
+	 			url: "/add_buddy",
+				type: "POST",
+				data: invite_data,
+				success: function(){
+					$('.event-content').appendTo('<p>' + name + '</p>');
+				}
+			});
+		console.log(invite_data);
 	});
 
 	//bail button action
@@ -99,7 +106,6 @@
 				day: parent.find('.day-id').val(),
 				time: parent.find('.time-id').val()
 			};
-
 			$.ajax({
 	 			url: "/delete_schedule",
 				type: "POST",
@@ -111,7 +117,6 @@
 		}
 
 	});
-
 
 	// Append dropdown choice
 	$(window).load(function() {
@@ -158,9 +163,5 @@
 	    }
 
 	});
-
-
-
-
 
 })();

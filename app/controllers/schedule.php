@@ -58,8 +58,6 @@ class Controller extends AppController {
 				';
 		}
 
-		// <a href="/delete_schedule" class="bail">bail</a>
-
 		$schedule .= str_replace('{{search}}', $event_info_html, $day_html);
 
 		$this->view->schedule = $schedule;

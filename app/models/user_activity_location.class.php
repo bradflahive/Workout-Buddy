@@ -21,9 +21,6 @@ class UserActivityLocation extends Model {
 	 */
 	public static function insert($input) {
 
-		// Note that Server Side validation is not being done here
-		// and should be implemented by you
-		// print_r($input);
 		// Prepare SQL Values
 		$sql_values = [
 			'user_id' => $input['user_id'],
@@ -48,7 +45,6 @@ class UserActivityLocation extends Model {
 	/**
 	 * Get Model
 	 */
-
 	public function get_model($ids) {
 
 		// Empty ID
@@ -76,9 +72,6 @@ class UserActivityLocation extends Model {
 	 * Update Criteria
 	 */
 	public function update($input) {
-
-		// Note that Server Side validation is not being done here
-		// and should be implemented by you
 
 		// Prepare SQL Values
 		$sql_values = [

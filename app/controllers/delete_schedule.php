@@ -4,7 +4,6 @@
 class Controller extends AjaxController {
 	protected function init() {
 
-
 		$user = new User(UserLogin::getUserID());
       	$_POST['user_id'] = $user->user_id;
 
@@ -14,7 +13,6 @@ class Controller extends AjaxController {
     	$input['location_id'] = $_POST['location'];
     	$input['time'] = $_POST['time'];
     	$input['day'] = $_POST['day'];
-
 
 		$sql =<<<sql
             DELETE 

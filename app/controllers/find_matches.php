@@ -4,16 +4,12 @@
 class Controller extends AjaxController {
 	protected function init() {
 
-		// Validate First
-
 //--------------------------------------------------------
 // Save form data to POST array & insert into DB
 
 		$user = new User(UserLogin::getUserID());
 		
 		$_POST['user_id'] = $user->user_id;
-
-		// $dow = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
 		
 		$input = [];
 		$input['user_id'] = $_POST['user_id'];
@@ -32,7 +28,6 @@ class Controller extends AjaxController {
 
 //--------------------------------------------------------
 // Retrieve USER info from DB AND match with criteria
-
 // Need to match logged user's user_activity_location choice with DB
 		$sql = "
 			SELECT *
@@ -54,9 +49,6 @@ class Controller extends AjaxController {
 		}
 		
 		$this->view['matches'] = $matches;
-
-//--------------------------------------------------------
-
 
 	}
 

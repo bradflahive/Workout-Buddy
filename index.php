@@ -19,6 +19,7 @@ Router::add('/logout', '/app/controllers/login/logout.php');
 //Matches
 Router::add('/find_matches', '/app/controllers/find_matches.php');
 Router::add('/delete_schedule', '/app/controllers/delete_schedule.php');
+Router::add('/add_buddy', '/app/controllers/add_buddy.php');
 
 // Issue Route
 Router::route();
