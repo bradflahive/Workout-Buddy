@@ -13,6 +13,8 @@ class Controller extends AjaxController {
     	$input['location_id'] = $_POST['location'];
     	$input['time'] = $_POST['time'];
     	$input['day'] = $_POST['day'];
+        $input['name'] = $_POST['name'];
+
 
 		$sql =<<<sql
             DELETE 

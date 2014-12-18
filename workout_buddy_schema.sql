@@ -55,6 +55,7 @@ CREATE TABLE user_activity_location (
     time INT unsigned NOT NULL,
     day INT unsigned NOT NULL,
     intensity varchar(10) NOT NULL DEFAULT '',
+    invitee_name varchar(31) DEFAULT 'None',
     PRIMARY KEY (user_id, activity_id, location_id, time, day)
 );
 

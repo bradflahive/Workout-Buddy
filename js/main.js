@@ -77,17 +77,22 @@
 		var invited = $(this).html() == 'Invited' ? 'Invite' : 'Invited';
 		$(this).html(invited).toggleClass('invited');
 		var	above = $(this).parents('.buddy');
+		var selected = $('form');
 		var invite_data = {
-			photo: above.find('img').val(),
-			name: above.find('h4').text()
+			name: above.find('h4').text(),
+			day: selected.find('#day1').val(),
+			activity: selected.find('#activity1').val(),
+			location: selected.find('#location1').val(),
+			time: selected.find('#time1').val(),
+			intensity: selected.find('#intensity1').val()
 		};
 		$.ajax({
 	 			url: "/add_buddy",
 				type: "POST",
 				data: invite_data,
-				success: function(){
-					$('.event-content').appendTo('<p>' + name + '</p>');
-				}
+				// success: function(){
+				// 	$('.event-content').appendTo('<p>' + name + '</p>');
+				// }
 			});
 		console.log(invite_data);
 	});

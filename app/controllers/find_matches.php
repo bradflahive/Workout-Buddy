@@ -46,11 +46,29 @@ class Controller extends AjaxController {
 
 		while ($row = $results->fetch_assoc()){
 			$matches[] = $row;
-		}
+		}	
 		
 		$this->view['matches'] = $matches;
 
 	}
 
+	// $input = [];
+	// 	$input['user_id'] = $_POST['user_id'];
+ //    	$input['activity_id'] = $_POST['activity'];
+ //    	$input['location_id'] = $_POST['location'];
+ //    	$input['time'] = $_POST['time'];
+ //    	$input['day'] = $_POST['day'];
+ //    	$input['intensity'] = $_POST['intensity'];
+ //    	$input['name'] = $_POST['name'];
+
+ //    	$user_activity_location = new UserActivityLocation($input);
+
 }
 $controller = new Controller();
+
+
+
+
+
+
+

@@ -83,7 +83,7 @@ p.slogan {
 
 span.font-awesome {
 	position: absolute;
-	top: 70px;
+	top: 40px;
 	font-size: 12pt;
 	right: 10px;
 	color: rgb(236, 239, 244);
@@ -373,13 +373,26 @@ div.empty p {
 }
 
 .event.activity {
-	margin-left: 95px;
+	margin-left: 34px;
 	font-size: 20pt;
+	display: inline-block;
 }
 
 .event.intensity {
 	margin-left: 95px;
 	font-size: 12pt;
+}
+
+.event.invitee {
+	position: absolute;
+	top: 34px;
+	right: 255px;
+}
+
+.event.invitee-name {
+	position: absolute;
+	top: 34px;
+	left: 468px;
 }
 
 div.bail {

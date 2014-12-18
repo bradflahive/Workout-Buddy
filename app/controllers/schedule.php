@@ -52,6 +52,7 @@ class Controller extends AppController {
 					<div class="event time">' .  $tod[$row['time']] . '</div>
 					<div class="event location">' .  $row['location_name'] . '</div>
 					<div class="event activity">'.  $row['activity_name'] . '</div>
+					<div class="event invitee">Invited: </div><div class="event invitee-name">' . $row['invitee_name'] . '</div>
 					<div class="event intensity">Intensity Level: '  .  $row['intensity'] . '</div>
 					<div class="bail">bail</div>
 				</div>
