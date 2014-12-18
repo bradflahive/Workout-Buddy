@@ -10,7 +10,8 @@ class Controller extends AjaxController {
 		$user = new User(UserLogin::getUserID());
 		
 		$_POST['user_id'] = $user->user_id;
-		
+		$_POST['name'] = 'No Invitee';
+
 		$input = [];
 		$input['user_id'] = $_POST['user_id'];
     	$input['activity_id'] = $_POST['activity'];
@@ -18,6 +19,8 @@ class Controller extends AjaxController {
     	$input['time'] = $_POST['time'];
     	$input['day'] = $_POST['day'];
     	$input['intensity'] = $_POST['intensity'];
+    	$input['invitee_name'] = $_POST['name'];
+    	// print_r($input);
 
     	$user_activity_location = new UserActivityLocation($input);
 
@@ -39,6 +42,7 @@ class Controller extends AjaxController {
 			AND ual.user_id <> {$input['user_id']}
 			AND user.user_id = ual.user_id
 			";
+			// AND ual.invitee_name = {$input['invitee_name']}
 
 		$results = db::execute($sql);
 

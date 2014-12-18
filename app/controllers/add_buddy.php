@@ -15,13 +15,13 @@ class Controller extends AjaxController {
     	$input['time'] = $_POST['time'];
     	$input['day'] = $_POST['day'];
     	$input['intensity'] = $_POST['intensity'];
-    	$input['name'] = $_POST['name'];
+    	$input['invitee_name'] = $_POST['name'];
 
 		// print_r($_POST);
 
 		$sql = "
 			UPDATE user_activity_location
-			SET invitee_name = '{$input['name']}'
+			SET invitee_name = '{$input['invitee_name']}'
 			WHERE activity_id = '{$input['activity_id']}'
 			AND location_id = '{$input['location_id']}'
 			AND day = '{$input['day']}'

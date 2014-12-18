@@ -29,7 +29,7 @@ class UserActivityLocation extends Model {
 			'time' => $input['time'],
 			'day' => $input['day'],
 			'intensity' => $input['intensity'],
-			'invitee_name' => $input['name']
+			'invitee_name' => $input['invitee_name']
 		];
 
 		// Ensure values are encompassed with quote marks

@@ -55,7 +55,7 @@ CREATE TABLE user_activity_location (
     time INT unsigned NOT NULL,
     day INT unsigned NOT NULL,
     intensity varchar(10) NOT NULL DEFAULT '',
-    invitee_name varchar(31) DEFAULT 'None',
+    invitee_name varchar(31) NOT NULL DEFAULT 'No Invitee',
     PRIMARY KEY (user_id, activity_id, location_id, time, day)
 );
 
@@ -156,7 +156,14 @@ VALUES
 (11, 3, 20, 2, 4, 3),
 (12, 3, 20, 2, 4, 3),
 (13, 3, 20, 2, 4, 3),
-(14, 3, 20, 2, 4, 3);
+(14, 3, 20, 2, 4, 3),
+(2, 4, 34, 1, 5, 1),
+(3, 4, 34, 1, 5, 1),
+(5, 4, 34, 1, 5, 1),
+(6, 4, 34, 1, 5, 1),
+(7, 4, 34, 1, 5, 1),
+(8, 4, 34, 1, 5, 1),
+(9, 4, 34, 1, 5, 1);
 
 
 

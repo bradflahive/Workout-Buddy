@@ -90,9 +90,6 @@
 	 			url: "/add_buddy",
 				type: "POST",
 				data: invite_data,
-				// success: function(){
-				// 	$('.event-content').appendTo('<p>' + name + '</p>');
-				// }
 			});
 		console.log(invite_data);
 	});
